@@ -1,4 +1,4 @@
-# ThinkPad-E14-Gen5-Enable-fprint-on-Arch-Linux
+# ThinkPad E14 Gen5 Enable fprint on Arch Linux
 ## 1 - How to enable fingerprint:
 ### 1.1 - Install packages (not as root!):
 * Install git:
