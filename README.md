@@ -39,8 +39,15 @@
 * Execute:
 
     ```
-    fprintd-enroll <username>
+    for file in /etc/pam.d/{login,su,sudo,gdm,lightdm,polkit-1}; do { echo 'auth sufficient pam_fprintd.so [debug=on] [max-tries=10] [timeout=5]'; cat "$file"; } > temp && mv temp "$file"; done
     ```
+    ```
+    fprintd-delete "$USER"
+    ```
+    ```
+    for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprintd-enroll -f "$finger" "$USER"; done
+    ```
+
 ### 1.3 - Troubleshooting
 * Maybe you'll need to anable fingerprint authentication with authselect (i needed this on Fedora Linux):
   ```
